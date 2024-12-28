@@ -36,7 +36,14 @@ body {
 footer {
     background-color: #303535;
     margin: 0;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 1rem;
 }
-footer p {
+#commandants p {
     margin: 0;
+}
+#modification_cavalier_container {
+    color: #303535;
 }

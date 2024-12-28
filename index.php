@@ -4,6 +4,9 @@
     $reqRenforts=$bd->prepare("SELECT * FROM renforts ORDER BY cavaliers DESC");
     $reqRenforts->execute();
 
+    $reqCommandants=$bd->prepare("SELECT r.cavaliers, c.commandant FROM renforts AS r JOIN commandants AS c ON r.id_commandant=c.id_commandant WHERE c.mort=0 ORDER BY r.cavaliers DESC LIMIT 5");
+    $reqCommandants->execute();
+
 ?>
 
 <!DOCTYPE html>
@@ -72,14 +75,17 @@
                     echo "</span>";
                     
                     echo "</a><br>";
-                }
-            
-            ?>    
-
+                }?>    
         </div>
     </div>
-    <footer id="comandants">
-        <p>lala</p>
+    <footer>
+        <?php
+            while($commandats=$reqCommandants->fetch()){
+                $commandant_name=$commandats['commandant'];
+                $cavaliers=$commandats['cavaliers'];
+                echo "<div id='commandants'><p>$commandant_name</p><br><p>$cavaliers</p></div>";
+            }
+        ?>
         
     </footer>
     
