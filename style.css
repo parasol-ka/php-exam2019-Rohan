@@ -11,12 +11,27 @@ body {
 }
 #renforts {
     display: flex;
+    align-items: flex-start;
 }
 #renforts img {
     width: 50%;
 }
-#renforts_liste p{
+#renforts_liste {
+    margin: 1rem;
+}
+.renforts_links{
     color : #303535;
+    text-decoration: none;
+    display: flex;
+}
+#img_container {
+    width: max-content;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.exclamations {
+    height: 1rem;
 }
 footer {
     background-color: #303535;
